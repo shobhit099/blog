@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %} 
+{{ super() }}
+- Contact_Us
+{% endblock %}
+{% block content %}
+    <style>
+    body {
+    background-image: url('static/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    }
+    .main{
+        background-color: black;
+        border-radius: 5px;
+        padding: 1cm 1cm;
+        color: #dde6f8;
+        width: 50%;
+        margin-left: 8.5cm;
+    }
+    h2{
+        text-align: center;
+        margin-top: 7mm;
+        font-weight: 600;
+    }
+    .content a{
+    text-decoration: none;
+    color:#dde6f8
+    }
+    button:hover{
+        color:#dde6f8;
+        transform: translateY(-0.3cm);
+    }
+    </style>
+    <div id="backgroundImage">
+        <h2><i>Ask Your Query<br></i></h2>
+            <form method="POST" action="#">
+                <div class="main">
+                <div class="row">
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Name" name="subtitle" aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                    <input type="text" class="form-control" placeholder="Email" name="authore" aria-label="Last name">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="Title">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="5"></textarea>
+                </div>
+                <div class="content">
+                <a><button type="submit" class="btn btn-light">Add</button></a>
+                </div>
+                </div>
+            </form>
+    </div>
+
+{% endblock %}

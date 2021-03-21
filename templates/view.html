@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>BlogWorld - {{ post.title }}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src='main.js'></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark  " style="background-color: #0b0b0c;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('home',p=p)}}">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto ">
+          <li class="nav-item ms-auto">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('blog1',p=p)}}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('write',p=p)}}">Write</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('about1',p=p)}}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('contact1',p=p)}}">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('index')}}">Logout</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex" method="GET">
+          <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search" >
+          <button class="btn btn-secondary btn-sm" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+        <style>
+        h1{
+            padding-top: 1cm;
+            margin-top: 1cm;
+            text-align: center;
+            text-underline-position: below;
+        }
+        .back{
+            background-color: #f1f3f7;
+            margin-left: 2cm;
+            margin-right: 2cm;
+            padding-bottom: 1cm;
+
+        }
+        p{
+            text-align: center;
+            font-size: 5mm;
+            font-weight: 200;
+        }
+        i{
+            margin-left: 15cm;
+            font-size: 7mm;
+            font-weight: 300;
+        }
+        body{
+      background: url("/static/bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+        
+        
+
+        </style>
+        <div class="back">
+            <div class="main">
+                <h1>{{ post.title }}<br></h1>
+                <i>{{ post.subtitle }}</i>
+                <p><b>Posted on {{post.created.date()}} and written by {{post.authore}}</b></p>
+                <div class="container">
+                    {{ post.message }}
+                </div>
+            </div>
+        </div>
+</body>

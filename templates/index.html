@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} 
+{{ super() }}
+- Home
+{% endblock %}
+
+{% block content %}
+<style>
+body {
+    background-image: url('static/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.content {
+  margin-top: 4cm;
+  text-align: center;
+  font-size: 5mm;
+  font-weight: 400;
+}
+span{
+    font-size: 2cm;
+    font-weight: 400;
+}
+.content a{
+    text-decoration: none;
+    color:#dde6f8
+}
+button:hover{
+    color:#dde6f8;
+    transform: translateY(-0.3cm);
+}
+</style>
+<div class="content">
+    <span>BlogWorld</span><br><br>
+    Blogging is good for your career. <br>
+    A well-executed blog sets you apart as an expert in your field.<br><br>
+        <button type="button" class="btn btn-dark "><a href="{{ url_for('blog')}}">Reading</a></button>
+        <button type="button" class="btn btn-dark" ><a href="{{ url_for('login')}}">Write</a></button>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+<style>
+    .card{
+        width: 24cm;
+        margin-left: 5cm;
+    }
+    .card-header{
+        display: block;
+        background-color: black;
+        color: #dde6f8;
+    }
+    span{
+        float: right;
+    }
+    .card-body{
+        background-color: #dde6f8;
+        color: black;
+    }
+    .card-title a{
+        color: black;
+    }
+    .btn-dark{
+        color: #dde6f8;
+        float: right;
+    }
+    .card-title a{
+        margin-right: 8cm;
+    }
+</style>
+
+<div class="card mb-4">
+    <div class="card-header">
+      {{post.created.date() }}
+      <span><b>By {{ post.authore }}</b></span>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">
+          <a href="{{ url_for('view',slug=post.slug) }}"><i class="manage"> {{ post.title }}</i></a>
+        </h5>
+      <p class="card-text">{{ post.subtitle }}</p>
+      <a href="{{ url_for('view',slug=post.slug) }}" class="btn btn-dark">Read more..</a>
+    </div>
+  </div>
